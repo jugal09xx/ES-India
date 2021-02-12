@@ -2,6 +2,14 @@
   font-family: "Poppins";
   scroll-behavior: smooth;
 }
+.close {
+  border: none;
+  background-color: transparent;
+}
+.close:hover {
+  color: rgba(0, 0, 0, 0.315);
+  transition-duration: 0.4s;
+}
 .majorcontainer {
   padding-top: 70px;
   min-height: 100vh;
@@ -15,11 +23,57 @@
   color: #444444;
 }
 
+.bioCore {
+  position: absolute;
+  left: 50%;
+  margin-left: -37%;
+  top: 50vh;
+  margin-top: -35vh;
+  height: 0vh;
+  width: 75%;
+  transition-duration: 0s;
+  overflow: hidden;
+}
+.bioCore p {
+  position: absolute;
+  background-color: #e2e2e2;
+  text-align: justify;
+  padding: 20px 50px;
+  padding-top: 15px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 45px;
+  color: #444444;
+  height: 70vh;
+  border-radius: 15px;
+  overflow: auto;
+  opacity: 0;
+  transition-duration: 0.4s;
+}
+.bioCore p::-webkit-scrollbar {
+  background-color: #e4e4e4;
+  width: 8px;
+  display: none;
+}
+.bioCore p::-webkit-scrollbar-thumb {
+  background-color: #747474;
+}
+.closeicon:hover {
+  cursor: pointer;
+  color: #242424;
+  transition-duration: 0.4s;
+}
+
 .Members tr td {
   padding-top: 37px;
 }
 .Members tr td img {
   border-radius: 100%;
+}
+.Members tr td img:hover {
+  cursor: pointer;
+  transition-duration: 0.9s;
+  box-shadow: 3px 3px 10px 10px rgba(0, 0, 0, 0.06);
 }
 .imgAdjustR {
   padding-right: 41px;
@@ -62,8 +116,30 @@
   font-size: 14px;
   color: #444444;
 }
+.post2 {
+  font-size: 14px;
+  font-weight: 250;
+  color: #444444;
+  text-align: center;
+  margin-bottom: 10px;
+}
 .otherMembers div p b {
   font-family: "playfair display";
+}
+.TopButton {
+  position: fixed;
+  z-index: 100;
+  right: 5%;
+  bottom: 10%;
+  background: white;
+  padding: 10px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: 0.3s all ease-in-out;
+}
+.TopButton:hover {
+  opacity: 1;
 }
 
 @media screen and (min-width: 850px) {
@@ -90,6 +166,9 @@
     width: 312px;
     font-weight: 300;
   }
+  .post2 {
+    width: 400px;
+  }
   .otherMembers {
     padding-bottom: 100px;
   }
@@ -100,5 +179,40 @@
   .otherMembers div p {
     font-size: 25px;
     line-height: 70px;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .bioCore p {
+    position: absolute;
+    background-color: #e2e2e2;
+    text-align: unset;
+    padding: 20px 30px;
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 35px;
+    color: #444444;
+    height: 70vh;
+    border-radius: 15px;
+    overflow: auto;
+    opacity: 0;
+    transition-duration: 0.4s;
+  }
+  .bioCore {
+    position: absolute;
+    left: 50%;
+    margin-left: -35%;
+    top: 50vh;
+    margin-top: -35vh;
+    height: 0vh;
+    width: 75%;
+    transition-duration: 0s;
+    overflow: hidden;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 1030px) {
+  .bioCore p {
+    font-size: 27px;
+    line-height: 55px;
   }
 }

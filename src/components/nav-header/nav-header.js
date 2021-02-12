@@ -111,8 +111,24 @@ const Header = () => {
       </div>
     );
   }
+
+  const [header, setHeader] = useState(false);
+
+
+  window.addEventListener('scroll',
+  (event)=>{
+    console.log()
+    if(window.scrollY >= 10){
+      setHeader(true);
+    }else{
+      setHeader(false);
+    }
+  })
+
+
+
   return (
-    <div className={classes.mainContainer}>
+    <div className={header ? classes.mainContainerscroll : classes.mainContainer}>
       <div className={classes.logoContainer}>
         <img alt="logo" src={Logo} className={classes.logo} />
       </div>
@@ -134,10 +150,13 @@ const Header = () => {
             <a href="#abt">About us</a>
           </li>
           <li>
-            <a href="#specs">Specialisations</a>
+            <a href="#specs">Specializations</a>
           </li>
           <li>
             <a href="#works">Works</a>
+          </li>
+          <li>
+            <a href="#consultancy">Consultancy</a>
           </li>
           <li>
             <Link to="/Ourteam">Our team</Link>
